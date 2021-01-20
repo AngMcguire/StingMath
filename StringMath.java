@@ -1,12 +1,5 @@
-import java.lang.reflect.Array;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.*;
-import java.util.stream.IntStream;
-import java.time.*;
+
 
 public class StringMath {
 
@@ -424,39 +417,7 @@ public class StringMath {
        System.out.println("squared: "+averageSquared);
         return "";
     }
- public static IntStream primeStream(){
-        //Sieve of Erasthenes
-        int []primes=new int[1000000];
-        Boolean[] thing= new Boolean[16000000];
-        Arrays.fill(thing,true);
-        //for (int i=0;i<thing.length;i++){
-        //    thing[i]=true;
-        //}
-        //while something continuous
-        //if thing[index of number]==true;
-        // number is a prime
-        // scan thing and make all multiples of that prime, false
-        int number=2;
-        int index=0;
-        while (index<primes.length) {
-            if (thing[number]) {
-                //System.out.println(number);
-                primes[index] = number;
-                for (int z = number + number; z < thing.length; z = z +number) {
-                    thing[z] = false;
-                }
 
-                index++;
-                number++;
-            }else {
-                number++;
-            }
-        }
-
-        //System.out.println(answer);
-        return IntStream.of(primes);
-
- }
 
     public static String stringDivision(String dividend, String divisor){
         //uses bisecting search to find answer
@@ -533,26 +494,7 @@ public class StringMath {
         System.out.println(answer+ "  /  "+str1+" = "+answer2);
         System.out.println(isEqual(str2,answer2));*/
 
-        fib(BigInteger.valueOf(200));
-    }
-    public static BigInteger fib(BigInteger n) {
-        // fibinacci sequence up to the nth number in sequence
-        //(n-2)+(n-1)=(n)
-        int converted= Integer.valueOf(n.toString());
 
-        BigInteger nMinus1=BigInteger.ONE;
-        BigInteger nMinus2=BigInteger.ONE;
-        BigInteger answer=nMinus1.add(nMinus2);
-        for (int i=2;i<converted;i++){
-            //System.out.println(answer);
-            nMinus2=nMinus1;
-            nMinus1=answer;
-            answer=nMinus1.add(nMinus2);
-        }
-
-
-        System.out.println(answer);
-        return answer;
     }
 
 }
